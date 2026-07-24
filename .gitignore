@@ -1,0 +1,32 @@
+# Target / Build artifacts
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE & Editor files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS / Temp files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Tomcat dynamic logs and work files inside tools/
+tools/tomcat/apache-tomcat-10.1.20/logs/*
+tools/tomcat/apache-tomcat-10.1.20/work/*
+tools/tomcat/apache-tomcat-10.1.20/temp/*
+tools/tomcat/apache-tomcat-10.1.20/webapps/buildsmart
+tools/tomcat/apache-tomcat-10.1.20/webapps/buildsmart.war
+
+# Extra ignores
+tools/
+*.ps1
+
