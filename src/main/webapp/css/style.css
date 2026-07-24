@@ -1,0 +1,483 @@
+/* ==========================================================================
+   BuildSmart Design System
+   Jakarta EE 10 / Tomcat Construction Resource Platform Design System
+   ========================================================================== */
+
+:root {
+    /* Brand Palette - Modern Construction Fintech */
+    --primary: #d97706;          /* Construction Warm Amber */
+    --primary-hover: #b45309;    /* Dark Amber */
+    --primary-light: #fef3c7;    /* Subtle Amber Tint */
+    --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    
+    --navy-900: #0f172a;         /* Deep Slate Navy (Header/Dark accents) */
+    --navy-800: #1e293b;
+    --navy-700: #334155;
+    
+    --slate-50: #f8fafc;         /* Background canvas */
+    --slate-100: #f1f5f9;        /* Soft card fill / input background */
+    --slate-200: #e2e8f0;        /* Subtle borders */
+    --slate-300: #cbd5e1;
+    --slate-500: #64748b;        /* Muted body text */
+    --slate-700: #334155;        /* Subheadings / Labels */
+    --slate-900: #0f172a;        /* Deep text */
+    
+    --success: #059669;          /* Emerald Green */
+    --success-light: #d1fae5;
+    --danger: #dc2626;           /* Crimson Red */
+    --danger-light: #fee2e2;
+    --warning: #eab308;
+    --info: #0284c7;
+    --info-light: #e0f2fe;
+
+    /* Typography */
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Radii & Elevation */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 9999px;
+
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+    --shadow-glow: 0 0 20px rgba(217, 119, 6, 0.25);
+
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Body Styles */
+body {
+    background-color: var(--slate-50);
+    color: var(--slate-900);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--navy-900);
+}
+
+/* Gradient text utility */
+.text-primary-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Primary Color Overrides */
+.text-primary { color: var(--primary) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+.bg-primary-light { background-color: var(--primary-light) !important; }
+
+/* Navigation Bar */
+.navbar-custom {
+    background-color: var(--navy-900);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.navbar-custom .navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+.navbar-custom .nav-link {
+    color: var(--slate-300);
+    font-weight: 500;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-link.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.btn-user-menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: var(--transition);
+}
+.btn-user-menu:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Buttons System */
+.btn-primary {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+.btn-action {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.825rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Cards Design System */
+.card {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--slate-300);
+}
+.card-header-clean {
+    background: transparent;
+    border-bottom: 1px solid var(--slate-200);
+    padding: 1.1rem 1.3rem;
+}
+
+/* KPI Dashboard Stat Cards */
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.kpi-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.kpi-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+/* Modern Photo System & Avatars */
+.avatar-box {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--slate-100);
+}
+.avatar-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card-hover:hover .avatar-img {
+    transform: scale(1.03);
+}
+.avatar-fixed-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: var(--shadow-md);
+}
+.avatar-fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+.shop-logo-box {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slate-100);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 1rem;
+    overflow: hidden;
+}
+.shop-logo-box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Tables System */
+.table-custom-wrapper {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+.table-custom {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.table-custom th {
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--slate-200);
+}
+.table-custom td {
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--slate-200);
+    color: var(--slate-900);
+    font-size: 0.9rem;
+}
+.table-custom tbody tr:last-child td {
+    border-bottom: none;
+}
+.table-custom tbody tr {
+    transition: background-color 0.15s ease;
+}
+.table-custom tbody tr:hover {
+    background-color: #f8fafc;
+}
+.action-cell {
+    white-space: nowrap;
+}
+
+/* Badges & Tags */
+.badge-pill {
+    padding: 0.3em 0.75em;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.badge-amber {
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+}
+.badge-emerald {
+    background-color: var(--success-light);
+    color: var(--success);
+}
+.badge-crimson {
+    background-color: var(--danger-light);
+    color: var(--danger);
+}
+.badge-slate {
+    background-color: var(--slate-200);
+    color: var(--slate-700);
+}
+
+/* Review Cards System */
+.review-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    transition: var(--transition);
+}
+.review-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Availability Calendar Widget */
+.cal-container {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+.cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.cal-nav h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+}
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+.cal-cell.cal-header {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--slate-500);
+    padding: 6px 0;
+    text-transform: uppercase;
+}
+.cal-cell.cal-day {
+    text-align: center;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    background: var(--slate-100);
+    color: var(--slate-700);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+    user-select: none;
+    border: 1px solid transparent;
+}
+.cal-cell.cal-past {
+    background: var(--slate-100);
+    color: var(--slate-300);
+    cursor: not-allowed;
+}
+.cal-cell.cal-unavail {
+    background: var(--danger) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+.cal-cell.cal-clickable {
+    cursor: pointer;
+}
+.cal-cell.cal-clickable:hover {
+    background: var(--primary-light);
+    color: var(--primary-hover);
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+.cal-cell.cal-clickable.cal-unavail:hover {
+    background: #b91c1c !important;
+}
+.cal-legend {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 0.8rem;
+    color: var(--slate-500);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--slate-200);
+}
+.cal-legend .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.swatch-avail   { background: var(--slate-100); border: 1px solid var(--slate-300); }
+.swatch-unavail { background: var(--danger); }
+.swatch-past    { background: var(--slate-200); }
+
+/* Interactive Star Rating Selector */
+.interactive-star-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+.interactive-star-rating .star-select {
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--slate-300);
+    transition: transform 0.15s ease-in-out, color 0.15s;
+}
+.interactive-star-rating .star-select:hover {
+    transform: scale(1.25);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--navy-900);
+    color: var(--slate-300);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+footer h5, footer h6 {
+    color: #ffffff !important;
+}
+footer a.text-muted:hover {
+    color: var(--primary) !important;
+    transition: var(--transition);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .kpi-card {
+        margin-bottom: 1rem;
+    }
+    .table-custom td, .table-custom th {
+        padding: 0.65rem 0.75rem;
+    }
+}
+
+/* ==========================================================================
+   Footer — visible grey text on dark background
+   ========================================================================== */
+footer .text-muted,
+footer p,
+footer span,
+footer li,
+footer ul {
+    color: #b0b8c4 !important;
+}
+
+footer a.text-muted,
+footer a.text-decoration-none {
+    color: #b0b8c4 !important;
+    transition: color 0.2s ease;
+}
+
+footer a.text-muted:hover,
+footer a.text-decoration-none:hover {
+    color: #f1f5f9 !important;
+}
+
+footer .border-secondary {
+    border-color: #3a4150 !important;
+}
+
+
+/* Enhanced contrast for accessibility */
+.accessibility-fix { color: inherit; }
+
